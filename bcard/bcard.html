@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarav Pahuja | JeanZ</title>
+</head>
+<body>
+    <div class="container">
+        <img src="CARD.jpeg" class="profile-avatar">
+
+        <div class="inner-card">
+            <header class="header">
+                <div class="name-block">
+                    <div class="name">Aarav Pahuja</div>
+                    <div class="title">CEO JeanZ</div>
+                    <div class="subtitle">An upcoming brand for genz</div>
+                </div>
+            </header>
+
+            <div class="content">
+                
+                <a href="tel:+18650000000" class="contact-item">
+                    <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/545/545536.png" alt="phone" class="icon-img"></div>
+                    <div class="info-text">
+                        <span class="info-label">Mobile</span>
+                        <span class="info-value">000-000-0000</span>
+                    </div>
+                </a>
+
+                <a href="mailto:aaravpahuja11161@gmail.com" class="contact-item">
+                    <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email" class="icon-img"></div>
+                    <div class="info-text">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">aaravpahuja11161@gmail.com</span>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/aaravpahuja" class="contact-item">
+                    <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="icon-img"></div>
+                    <div class="info-text">
+                        <span class="info-label">LinkedIn</span>
+                        <span class="info-value">www.linkedin.com/in/aaravpahuja</span>
+                    </div>
+                </a>
+
+                <a href="https://calendly.com/" target="_blank" class="contact-item">
+                    <div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="calendar" class="icon-img"></div>
+                    <div class="info-text">
+                        <span class="info-label">Schedule</span>
+                        <span class="info-value">Book a Meeting</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="actions">
+                <a href="aarav-pahuja.vcard" download class="btn-primary">
+                    Save Contact
+                </a>
+                
+                <!-- Native Share Button -->
+                <div class="secondary-actions">
+                    <button class="btn-ghost" onclick="shareProfile()">
+                        🔗 Share Profile
+                    </button>
+                </div>
+
+                <a href="" class="footer-logo">
+                     → JeanZ
+                </a>
+            </div>
+            
+            <div class="footer-decoration"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Element -->
+    <div id="toast" class="toast">
+        ✓ Link Copied!
+    </div>
+
+<style>
+           :root {
+            --primary: #c62027;
+            --primary-soft: #f8e7e7;
+            --accent: #0f5c7d;
+            --text-black: #111111;
+            --text-muted: #5f5f5f;
+            --bg-gray: #edf0f5;
+            --card-white: rgba(255,255,255,0.98);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            min-height: 100%;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 90px 20px 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('blue-denim-texture-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            filter: brightness(0.8) blur(0.75px);
+            opacity: 0.95;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: visible;
+            margin-top: -80px;
+            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            border: 5px solid #ffffff;
+            background: linear-gradient(135deg, #ffffff, #f8f8fa);
+            box-shadow: 0 18px 30px rgba(0,0,0,0.22);
+            object-fit: cover;
+        }
+
+        .inner-card {
+            background: var(--card-white);
+            border: 1px solid rgba(17,17,17,0.08);
+            box-shadow: 0 18px 48px rgba(0,0,0,0.16);
+            border-radius: 26px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), #dc4a4a);
+            color: white;
+            padding: 70px 30px 40px;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
+            z-index: 10;
+            text-align: center;
+        }
+
+        .name-block {
+            position: relative;
+            z-index: 2;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.12);
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 20px 0 24px;
+            flex: 1;
+            position: relative;
+            background-color: white;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 28px;
+            text-decoration: none;
+            color: var(--text-black);
+            transition: background 0.2s, transform 0.2s;
+            border-left: 4px solid transparent;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            border-radius: 18px;
+            margin: 0 20px 12px;
+        }
+
+        .contact-item:hover {
+            background-color: #fcf0f0;
+            border-left: 4px solid var(--primary);
+            transform: translateX(2px);
+        }
+
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f6f6f8;
+            border-radius: 50%;
+            margin-right: 18px;
+            color: var(--primary);
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .icon-img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .contact-item:hover .icon-box {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .info-text {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .info-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #9b9b9b;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 0.6px;
+        }
+
+        .info-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: #222;
+            min-width: 0;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        .actions {
+            padding: 0 30px 28px;
+            background: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), #d24242);
+            color: white;
+            text-align: center;
+            padding: 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 14px 24px rgba(198,32,39,0.18);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .secondary-actions {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn-ghost {
+            background: #f7f7f8;
+            border: 1px solid rgba(17,17,17,0.08);
+            color: #4f4f4f;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 22px;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+
+        .btn-ghost:hover {
+            background-color: #fff;
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .footer-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-black);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            opacity: 0.9;
+            transition: all 0.2s;
+            padding-top: 10px;
+        }
+
+        .footer-logo:hover {
+            opacity: 1;
+            transform: scale(1.02);
+            color: var(--primary);
+        }
+
+        .footer-decoration {
+            height: 16px;
+            background: linear-gradient(135deg, var(--primary), #d24242);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: rgba(20,20,20,0.94);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+</style>
+<script>
+            async function shareProfile() {
+            const shareData = {
+                title: 'Aarav Pahuja -CEO JeanZ',
+                text: 'Connect with Aarav Pahuja,CEO JeanZ .',
+                url: window.location.href
+            };
+
+            // Check if Native Share API is supported (Mobile)
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    console.log('Error sharing:', err);
+                }
+            } else {
+                // Fallback for Desktop: Copy URL to clipboard
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    showToast();
+                });
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+</script>
+</body>
+</html>
